@@ -5,9 +5,25 @@
     padding: 0;
 }
 
+@font-face {
+    font-family: 'harry';
+    src: url(../fonts/HARRYP__.TTF);
+}
+
+@font-face {
+    font-family: 'personChar';
+    src: url(../fonts/harry_potter_and_the_dingbat_font.TTF);
+}
+
 body {
     background-color: black;
     overflow-x: hidden;
+    font-family: 'harry';
+    cursor: url('../pics/cursorr.cur'), auto;
+}
+
+.pointer {
+    cursor: url(../pics/hover.cur), pointer;
 }
 
 
