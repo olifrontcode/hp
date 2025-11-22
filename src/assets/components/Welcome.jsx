@@ -1,7 +1,15 @@
+// react
 import { useRef } from 'react'
+
+// img
 import owlImg from '../pics/owl.png'
+
+// gsap
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
+
+// helper
+import { moveOwl, rotateOwl } from '../helper/owlMotion';
 
 function Welcome() {
 
@@ -14,17 +22,10 @@ function Welcome() {
             ease: "bounce"
         });
 
-        tl.to(owlRef.current, {
-            motionPath: {
-                path: [
-                    { x: -150, y: 80 },
-                    { x: -300, y: 20 },
-                ],
-                curviness: 1,
-            },
-            duration: 2,
-            ease: "bounce.in"
-        })
+        tl.to(owlRef.current, moveOwl([
+            { x: -150, y: 80 },
+            { x: -300, y: 20 },
+        ], 1, 2, "bounce.in"))
 
         tl.to(owlRef.current, {
             scaleX: -1,
@@ -37,34 +38,15 @@ function Welcome() {
             duration: 1,
         })
 
-        tl.to(owlRef.current, {
-            motionPath: {
-                path: [
-                    { x: -300, y: -50 },
-                    { x: 100, y: -50 },
-                    { x: 130, y: 0 },
-                ],
-                curviness: 1,
-            },
-            duration: 3.5,
-            ease: "power1.inOut"
-        })
+        tl.to(owlRef.current, moveOwl([
+            { x: -300, y: -50 },
+            { x: 100, y: -50 },
+            { x: 130, y: 0 },
+        ], 1, 3.5, "power1.inOut"))
 
-        tl.to(owlRef.current, {
-            scaleX: 1,
-            ease: "power1.inOut"
-        })
+        tl.to(owlRef.current, rotateOwl(1 , "power1.inOut"))
 
-        tl.to(owlRef.current, {
-            motionPath: {
-                path: [
-                    { x: -50, y: -30 },
-                ],
-                curviness: 1,
-            },
-            duration: 2,
-            ease: "power1.inOut"
-        })
+        tl.to(owlRef.current, moveOwl( [{ x: -50, y: -30 }] , 1, 2, "power1.inOut"))
 
         tl.to(owlRef.current, {
             scaleX: -1,
@@ -77,9 +59,7 @@ function Welcome() {
 
         const tl = gsap.timeline();
         
-        tl.to(owlRef.current, {
-            scaleX: -1
-        })
+        tl.to(owlRef.current, rotateOwl(-1 , "power1.inOut"))
 
         tl.to(owlRef.current, {
             x: 2000,
@@ -88,9 +68,7 @@ function Welcome() {
             ease: 'power2.out'
         })
 
-        tl.to(owlRef.current, {
-            scaleX: 1
-        })
+        tl.to(owlRef.current, rotateOwl(1 , "power1.inOut"))
 
         setTimeout(() => {
             mainAnimation(tl, 2000);
