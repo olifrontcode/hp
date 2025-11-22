@@ -118,3 +118,68 @@ body {
         font-size: 1rem;
     }
 }
+
+/* ----------------------------------  Theater  ---------------------------------- */
+
+.curtainContainer {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+}
+
+.curtainContainer .curtain_left, .curtainContainer .curtain_right {
+    position: relative;
+    height: 100%;
+    width: 50%;
+    z-index: 2;
+} 
+
+.curtainContainer .curtain_left img, .curtainContainer .curtain_right img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+.flipLetter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: contain;
+    z-index: 1;
+}
+
+.openLetter {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    z-index: 1;
+}
+
+.quote {
+    font-size: 25px;
+}
+
+@media (max-width: 1400px) {
+    .quote {
+        font-size: 16px;
+        width: 200px;
+    }
+}
+
+.quoteChar {
+    font-size: 50px;
+    font-family: 'personChar';
+}
