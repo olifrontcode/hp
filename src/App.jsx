@@ -3,6 +3,7 @@
 import Parallax from "./assets/components/Parallax";
 import Welcome from "./assets/components/Welcome";
 import Theater from "./assets/components/Theater";
+import Lumos from "./assets/components/Lumos";
 
 // GSAP
 import gsap from "gsap";
@@ -18,6 +19,7 @@ function App() {
       <Welcome />
       <Parallax />
       <Theater />
+      <Lumos />
     </>
   )
 }

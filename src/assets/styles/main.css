@@ -183,3 +183,15 @@ body {
     font-size: 50px;
     font-family: 'personChar';
 }
+
+/* ----------------------------------  Lumos  ---------------------------------- */
+
+.lumos {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    filter: blur(2px);
+    transition: background 0.3s ease;
+}
